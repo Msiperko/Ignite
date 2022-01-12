@@ -1,4 +1,3 @@
-require("dotenv").config();
 
 //base url
 const base_url = 'https://api.rawg.io/api/'
@@ -32,6 +31,13 @@ const currentYear   = new Date().getFullYear(),
           
 
 //Popular games
-const popular_games = `games?key=REACT_APP_KEY&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`
+const popular_games = `games?key=f1c2948c382441a3bda2d2b6b61f605a&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`
+const upcoming_games = `games?key=f1c2948c382441a3bda2d2b6b61f605a&dates=${currentDate},${nextYear}&ordering+-added&page_size=10`
+const newGames = `games?key=f1c2948c382441a3bda2d2b6b61f605a&dates=${lastYear},${currentDate}&ordering+-released&page_size=10`
 
-export const popularGamesURL = () => `${base_url}${popular_games}`
+export const popularGamesURL  = () => `${base_url}${popular_games}`
+export const upcomingGamesURL = () => `${base_url}${upcoming_games}`
+export const newGamesURL      = () => `${base_url}${newGames}`  
+
+
+// f1c2948c382441a3bda2d2b6b61f605a
